@@ -1,5 +1,6 @@
 export class Ahorcado {
   private readonly palabra: string;
+  private readonly vidasIniciales: number = 6;
 
   constructor(palabra: string) {
     this.palabra = palabra;
@@ -10,5 +11,9 @@ export class Ahorcado {
       .split("")
       .map(() => "_")
       .join(" ");
+  }
+
+    vidas(): number {
+    return this.vidasIniciales;
   }
 }
