@@ -4,11 +4,11 @@ export class Ahorcado {
   private readonly letrasAdivinadas: string[] = [];
 
   constructor(palabra: string) {
-    this.palabra = palabra;
+    this.palabra = palabra.toUpperCase();
   }
 
   adivinar(letra: string): void {
-    this.letrasAdivinadas.push(letra);
+    this.letrasAdivinadas.push(letra.toUpperCase());
   }
 
   palabraEnmascarada(): string {
