@@ -5,5 +5,18 @@ const palabra = params.get("word") ?? "";
 
 const juego = new Ahorcado(palabra);
 
-document.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
-document.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
+function pintar(): void {
+  document.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
+  document.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
+}
+
+pintar();
+
+const input = document.querySelector("input")!;
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && input.value) {
+    juego.adivinar(input.value);
+    input.value = "";
+    pintar();
+  }
+});
