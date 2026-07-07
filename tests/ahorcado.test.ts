@@ -26,4 +26,11 @@ describe("Ahorcado", () => {
 
     expect(juego.palabraEnmascarada()).toBe("A _ A");
   });
+  it("adivinar una letra presente no descuenta vidas", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("A");
+
+    expect(juego.vidas()).toBe(6);
+  });
 });
