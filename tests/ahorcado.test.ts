@@ -19,4 +19,11 @@ describe("Ahorcado", () => {
 
     expect(juego.palabraEnmascarada()).toBe("A _ A");
   });
+  it("adivinar es case-insensitive", () => {
+    const juego = new Ahorcado("ALA");
+
+    juego.adivinar("a");
+
+    expect(juego.palabraEnmascarada()).toBe("A _ A");
+  });
 });
