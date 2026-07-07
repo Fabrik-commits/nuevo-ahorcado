@@ -33,4 +33,11 @@ describe("Ahorcado", () => {
 
     expect(juego.vidas()).toBe(6);
   });
+  it("adivinar una letra ausente descuenta una vida", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("E");
+
+    expect(juego.vidas()).toBe(5);
+  });
 });
