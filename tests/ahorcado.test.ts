@@ -12,4 +12,11 @@ describe("Ahorcado", () => {
 
     expect(juego.vidas()).toBe(6);
   });
+  it("adivinar una letra presente revela todas sus ocurrencias", () => {
+    const juego = new Ahorcado("ALA");
+
+    juego.adivinar("A");
+
+    expect(juego.palabraEnmascarada()).toBe("A _ A");
+  });
 });
