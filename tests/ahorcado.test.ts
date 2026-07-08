@@ -40,4 +40,14 @@ describe("Ahorcado", () => {
 
     expect(juego.vidas()).toBe(5);
   });
+  it("al adivinar todas las letras, el mensaje es GANASTE", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("G");
+    juego.adivinar("A");
+    juego.adivinar("T");
+    juego.adivinar("O");
+
+    expect(juego.mensaje()).toBe("GANASTE");
+  });
 });
