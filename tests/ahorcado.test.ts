@@ -59,4 +59,16 @@ describe("Ahorcado", () => {
 
     expect(juego.mensaje()).toBe("");
   });
+  it("al agotar las vidas, el mensaje es PERDISTE", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("E");
+    juego.adivinar("I");
+    juego.adivinar("U");
+    juego.adivinar("B");
+    juego.adivinar("C");
+    juego.adivinar("D");
+
+    expect(juego.mensaje()).toBe("PERDISTE");
+  });
 });
