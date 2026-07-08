@@ -8,6 +8,7 @@ const juego = new Ahorcado(palabra);
 function pintar(): void {
   document.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
   document.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
+  document.querySelector('[data-testid="mensaje"]')!.textContent = juego.mensaje();
 }
 
 pintar();
