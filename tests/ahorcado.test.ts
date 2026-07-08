@@ -71,4 +71,16 @@ describe("Ahorcado", () => {
 
     expect(juego.mensaje()).toBe("PERDISTE");
   });
+  it("al perder, la palabra se ve completa aunque no se hayan adivinado todas las letras", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("E");
+    juego.adivinar("I");
+    juego.adivinar("U");
+    juego.adivinar("B");
+    juego.adivinar("C");
+    juego.adivinar("D");
+
+    expect(juego.palabraEnmascarada()).toBe("G A T O");
+  });
 });
