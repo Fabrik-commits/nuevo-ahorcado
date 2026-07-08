@@ -83,4 +83,12 @@ describe("Ahorcado", () => {
 
     expect(juego.palabraEnmascarada()).toBe("G A T O");
   });
+  it("al reintentar una letra ya adivinada, el aviso informa que ya fue intentada", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("A");
+    juego.adivinar("A");
+
+    expect(juego.aviso()).toBe("Ya intentaste esa letra");
+  });
 });
