@@ -23,3 +23,6 @@ Then("se ven {int} vidas", async ({ page }, vidas: number) => {
 Then("ve el mensaje {string}", async ({ page }, mensaje: string) => {
   await expect(page.getByTestId("mensaje")).toHaveText(mensaje);
 });
+Then("ve el aviso {string}", async ({ page }, aviso: string) => {
+  await expect(page.getByTestId("aviso")).toHaveText(aviso);
+});
