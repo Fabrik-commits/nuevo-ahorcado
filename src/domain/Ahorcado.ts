@@ -17,12 +17,23 @@ export class Ahorcado {
     }
   }
 
-  palabraEnmascarada(): string {
+/*   palabraEnmascarada(): string {
     return this.palabra
       .split("")
       .map((c) => (this.letrasAdivinadas.includes(c) ? c : "_"))
       .join(" ");
-  }
+  } */
+
+palabraEnmascarada(): string {
+    if (this.vidasRestantes <= 0) {
+      return this.palabra.split("").join(" ");
+    }
+
+    return this.palabra
+      .split("")
+      .map((c) => (this.letrasAdivinadas.includes(c) ? c : "_"))
+      .join(" ");
+  }   
 
   vidas(): number {
     return this.vidasRestantes;
