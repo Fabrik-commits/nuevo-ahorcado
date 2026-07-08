@@ -3,6 +3,7 @@ export class Ahorcado {
   private readonly vidasIniciales: number = 6;
   private readonly letrasAdivinadas: string[] = [];
   private vidasRestantes = this.vidasIniciales;
+  private ultimoAviso = "";
 
   constructor(palabra: string) {
     this.palabra = palabra.toUpperCase();
@@ -10,11 +11,22 @@ export class Ahorcado {
 
   adivinar(letra: string): void {
     const letraNormalizada = letra.toUpperCase();
+
+    if (this.letrasAdivinadas.includes(letraNormalizada)) {
+      this.ultimoAviso = "Ya intentaste esa letra";
+      return;
+    }
+
+    this.ultimoAviso = "";
     this.letrasAdivinadas.push(letraNormalizada);
 
     if (!this.palabra.includes(letraNormalizada)) {
       this.vidasRestantes -= 1;
     }
+  }
+
+  aviso(): string {
+    return this.ultimoAviso;
   }
 
 /*   palabraEnmascarada(): string {
