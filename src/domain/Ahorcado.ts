@@ -27,4 +27,11 @@ export class Ahorcado {
   vidas(): number {
     return this.vidasRestantes;
   }
+
+  mensaje(): string {
+    const letrasUnicas = new Set(this.palabra.split(""));
+    const todasAdivinadas = [...letrasUnicas].every((c) => this.letrasAdivinadas.includes(c));
+
+    return todasAdivinadas ? "GANASTE" : "";
+  }
 }
