@@ -50,4 +50,13 @@ describe("Ahorcado", () => {
 
     expect(juego.mensaje()).toBe("GANASTE");
   });
+  it("mientras falten letras por adivinar, no hay mensaje", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("G");
+    juego.adivinar("A");
+    juego.adivinar("T");
+
+    expect(juego.mensaje()).toBe("");
+  });
 });
