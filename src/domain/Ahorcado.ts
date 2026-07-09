@@ -12,6 +12,11 @@ export class Ahorcado {
   adivinar(letra: string): void {
     const letraNormalizada = letra.toUpperCase();
 
+    if (!/^[A-ZÑ]$/.test(letraNormalizada)) {
+      this.ultimoAviso = "Ingresá una letra válida";
+      return;
+    }
+    
     if (this.letrasAdivinadas.includes(letraNormalizada)) {
       this.ultimoAviso = "Ya intentaste esa letra";
       return;
