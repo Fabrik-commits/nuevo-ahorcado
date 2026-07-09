@@ -99,4 +99,12 @@ describe("Ahorcado", () => {
 
     expect(juego.vidas()).toBe(5);
   });
+  it("adivinar algo que no es una letra no descuenta vidas y avisa", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("5");
+
+    expect(juego.vidas()).toBe(6);
+    expect(juego.aviso()).toBe("Ingresá una letra válida");
+  });
 });
