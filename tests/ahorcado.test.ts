@@ -107,4 +107,16 @@ describe("Ahorcado", () => {
     expect(juego.vidas()).toBe(6);
     expect(juego.aviso()).toBe("Ingresá una letra válida");
   });
+  it("adivinar con la partida ya terminada no tiene efecto", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("G");
+    juego.adivinar("A");
+    juego.adivinar("T");
+    juego.adivinar("O");
+    juego.adivinar("X");
+
+    expect(juego.mensaje()).toBe("GANASTE");
+    expect(juego.vidas()).toBe(6);
+  });
 });
