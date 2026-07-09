@@ -91,4 +91,12 @@ describe("Ahorcado", () => {
 
     expect(juego.aviso()).toBe("Ya intentaste esa letra");
   });
+  it("reintentar una letra ya fallada no descuenta otra vida", () => {
+    const juego = new Ahorcado("GATO");
+
+    juego.adivinar("E");
+    juego.adivinar("E");
+
+    expect(juego.vidas()).toBe(5);
+  });
 });
