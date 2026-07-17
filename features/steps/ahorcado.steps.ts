@@ -26,3 +26,11 @@ Then("ve el mensaje {string}", async ({ page }, mensaje: string) => {
 Then("ve el aviso {string}", async ({ page }, aviso: string) => {
   await expect(page.getByTestId("aviso")).toHaveText(aviso);
 });
+
+Given("una partida con la palabra {string} y la categoría {string}", async ({ page }, palabra: string, categoria: string) => {
+  await page.goto(`/?word=${palabra}&categoria=${categoria}`);
+});
+
+Then("se ve la pista {string}", async ({ page }, pista: string) => {
+  await expect(page.getByTestId("pista")).toHaveText(pista);
+});
