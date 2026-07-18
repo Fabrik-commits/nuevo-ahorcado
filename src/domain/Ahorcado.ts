@@ -1,12 +1,18 @@
 export class Ahorcado {
   private readonly palabra: string;
+  private readonly categoriaPartida: string;
   private readonly vidasIniciales: number = 6;
   private readonly letrasAdivinadas: string[] = [];
   private vidasRestantes = this.vidasIniciales;
   private ultimoAviso = "";
 
-  constructor(palabra: string) {
+  constructor(palabra: string, categoria: string = "") {
     this.palabra = palabra.toUpperCase();
+    this.categoriaPartida = categoria;
+  }
+
+  categoria(): string {
+    return this.categoriaPartida;
   }
 
   adivinar(letra: string): void {
