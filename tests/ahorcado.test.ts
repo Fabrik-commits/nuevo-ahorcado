@@ -119,4 +119,9 @@ describe("Ahorcado", () => {
     expect(juego.mensaje()).toBe("GANASTE");
     expect(juego.vidas()).toBe(6);
   });
+  it("al crear una partida con categoría, categoria() la devuelve", () => {
+    const juego = new Ahorcado("GATO", "Animales");
+
+    expect(juego.categoria()).toBe("Animales");
+  });
 });
