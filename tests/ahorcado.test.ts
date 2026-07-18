@@ -124,4 +124,9 @@ describe("Ahorcado", () => {
 
     expect(juego.categoria()).toBe("Animales");
   });
+  it("al crear una partida sin categoría, categoria() devuelve vacío", () => {
+    const juego = new Ahorcado("GATO");
+
+    expect(juego.categoria()).toBe("");
+  });
 });
